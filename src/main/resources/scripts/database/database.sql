@@ -1,3 +1,9 @@
+DROP DATABASE IF EXISTS app_batch;
+
+CREATE DATABASE app_batch;
+
+USE app_batch;
+
 CREATE TABLE client (
 	id INT NOT NULL AUTO_INCREMENT,
 	name TEXT NOT NULL,
