@@ -25,9 +25,6 @@
     - [Implemented Job](https://github.com/PedroLucasOM/PromotionalEmailGenerator#implemented-job)
     - [Prerequisites](https://github.com/PedroLucasOM/PromotionalEmailGenerator#prerequisites)
     - [Configuration](https://github.com/PedroLucasOM/PromotionalEmailGenerator#configuration)
-      - [Windows](https://github.com/PedroLucasOM/PromotionalEmailGenerator#windows)
-      - [Linux](https://github.com/PedroLucasOM/PromotionalEmailGenerator#linux)
-      - [Mac](https://github.com/PedroLucasOM/PromotionalEmailGenerator#mac)
     - [Run](https://github.com/PedroLucasOM/PromotionalEmailGenerator#run)
     - [Usage](https://github.com/PedroLucasOM/PromotionalEmailGenerator#usage)
     - [Stop](https://github.com/PedroLucasOM/PromotionalEmailGenerator#stop)
@@ -48,7 +45,7 @@ To learn more about this framework, view this article on the Notion:
 
 ## Implemented Job
 
-
+It's a job responsible to execute one step that will read clients and products from a configured datasource, process this data linking the product interest to each client and writing and sending an email to the configured recipients two times for each 60 seconds.
 
 ## Prerequisites
 
@@ -56,18 +53,15 @@ To learn more about this framework, view this article on the Notion:
 
 ## Configuration
 
+To configure this job, you need to follow some steps: 
 
-### Windows
-
-
-
-### Linux
-
-
-
-### Mac
-
-
+- First, you need to create an account at [MailTrap](https://mailtrap.io/)
+- Create a new inbox
+- View the SMTP Setting and get the **user** and **password**
+- With these informations, you need to open the env file [.env](https://github.com/PedroLucasOM/PromotionalEmailGenerator/blob/master/.env) and put this data at **EMAIL_USER** and **EMAIL_PASSWORD**
+- After it, you need to get two email addresses you have access to
+- Open the file [database.sql](https://github.com/PedroLucasOM/PromotionalEmailGenerator/blob/master/src/main/resources/scripts/database/database.sql)
+- In the lines 30 and 31, you will put these email addresses instead of **'cora75@hotmail.com'** and **'domingo56@yahoo.com'**
 
 ## Run
 
@@ -79,6 +73,13 @@ docker-compose up -d --build
 
 ## Usage
 
+### Seeing the emails in the mailtrap panel
+
+Navigate to your Mailtrap Panel and see the sended emails to the respective recipients.
+
+### Seeing the emails in the configured recipients
+
+Navigate to your inbox of the emails that you putted like recipients and see the messages.
 
 
 ## Stop
